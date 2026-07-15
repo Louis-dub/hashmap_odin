@@ -1,0 +1,8 @@
+class hashMap {
+    constructor(loadFactor = 0.75, capacity = 16) {
+        this.loadFactor = loadFactor;
+        this.capacity = capacity;
+    }
+}
+
+export { hashMap };
