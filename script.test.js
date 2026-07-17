@@ -146,6 +146,14 @@ test("Values method", () => {
     ]);
 });
 
+test("Entries method", () => {
+    expect(hashMap.entries()).toEqual([
+        ["lion", "value12"], ["kite", "value11"], ["apple", "value13"], ["elephant", "value5"], ["moon", "value14"],
+        ["ice cream", "value9"], ["dog", "value4"], ["jacket", "value10"], ["banana", "value2"], ["frog", "value6"],
+        ["grape", "value7"], ["hat", "value8"],
+    ]);
+});
+
 test("Clear method", () => {
     hashMap.clear();
     expect(hashMap.toString()).toBe(

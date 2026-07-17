@@ -115,6 +115,20 @@ class HashMap {
         return allValues;
     }
 
+    entries() {
+        const allEntries = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            let node = this.buckets[i].headNode;
+
+            while (node) {
+                allEntries.push([node.key, node.value]);
+                node = node.nextNode;
+            }
+        }
+        return allEntries;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)
