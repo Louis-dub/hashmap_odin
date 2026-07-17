@@ -101,6 +101,20 @@ class HashMap {
         return allKeys;
     }
 
+    values() {
+        const allValues = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            let node = this.buckets[i].headNode;
+
+            while (node) {
+                allValues.push(node.value);
+                node = node.nextNode;
+            }
+        }
+        return allValues;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)

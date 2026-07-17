@@ -140,6 +140,12 @@ test("Keys method", () => {
     ]);
 });
 
+test("Values method", () => {
+    expect(hashMap.values()).toEqual([
+        "value12", "value11", "value13", "value5", "value14", "value9", "value4", "value10", "value2", "value6", "value7", "value8"
+    ]);
+});
+
 test("Clear method", () => {
     hashMap.clear();
     expect(hashMap.toString()).toBe(
