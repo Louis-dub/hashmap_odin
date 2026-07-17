@@ -87,6 +87,20 @@ class HashMap {
             this.buckets[i].headNode = null;
     }
 
+    keys() {
+        const allKeys = [];
+
+        for (let i = 0; i < this.capacity; i++) {
+            let node = this.buckets[i].headNode;
+
+            while (node) {
+                allKeys.push(node.key);
+                node = node.nextNode;
+            }
+        }
+        return allKeys;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)

@@ -134,6 +134,11 @@ test("Remove method with a key that does not exist", () => {
     expect(hashMap.remove("test")).toBe(false);
 });
 
+test("Keys method", () => {
+    expect(hashMap.keys()).toEqual([
+        "lion", "kite", "apple", "elephant", "moon", "ice cream", "dog", "jacket", "banana", "frog", "grape", "hat"
+    ]);
+});
 
 test("Clear method", () => {
     hashMap.clear();
