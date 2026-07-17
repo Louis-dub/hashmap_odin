@@ -70,20 +70,21 @@ test("Set method when capacity is so little", () => {
 expect(hashMap.toString()).toEqual(
 `0 : null
 1 : null
-2 : ( kite : value11 ) -> null
-3 : null
-4 : ( grape : value7 ) -> null
-5 : ( banana : value2 ) -> null
+2 : ( lion : value12 ) -> null
+3 : ( kite : value11 ) -> null
+4 : null
+5 : null
 6 : null
-7 : ( dog : value4 ) -> ( jacket : value10 ) -> null
-8 : ( apple : value13 ) -> ( elephant : value5 ) -> null
-9 : ( moon : value14 ) -> null
-10 : ( carrot : value3 ) -> null
-11 : null
+7 : null
+8 : ( apple : value13 ) -> null
+9 : ( elephant : value5 ) -> ( moon : value14 ) -> null
+10 : null
+11 : ( ice cream : value9 ) -> null
 12 : null
-13 : ( hat : value8 ) -> null
-14 : ( frog : value6 ) -> null
-15 : ( ice cream : value9 ) -> null
-16 : ( lion : value12 ) -> null
+13 : null
+14 : ( dog : value4 ) -> ( jacket : value10 ) -> null
+15 : ( banana : value2 ) -> ( carrot : value3 ) -> null
+16 : ( frog : value6 ) -> null
+17 : ( grape : value7 ) -> ( hat : value8 ) -> null
 `);
 });

@@ -18,6 +18,27 @@ class HashMap {
         return hashCode;
     }
 
+    grow() {
+        this.capacity++;
+        const oldBucket = this.buckets;
+        this.buckets = Array.from({ length: this.capacity }, () => new LinkedList());
+
+        for (let i = 0; i < oldBucket.length; i++) {
+            while (oldBucket[i].head()) {
+                let node = oldBucket[i].shift();
+                this.set(node.key, node.value);
+            }
+        }
+    }
+
+    length() {
+        let len = 0;
+
+        for (let i = 0; i < this.capacity; i++)
+            len += this.buckets[i].size();
+        return len;
+    }
+
     set(key, value) {
         const hash = this.hash(key);
         const bucket = this.buckets[hash];
@@ -30,6 +51,8 @@ class HashMap {
         }
 
         bucket.append(key, value);
+        if (this.length() > this.capacity * this.loadFactor)
+            this.grow();
     }
 
     toString() {

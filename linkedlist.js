@@ -44,7 +44,7 @@ class LinkedList {
     head() {
         if (!this.headNode)
             return undefined;
-        return this.headNode.key;
+        return this.headNode;
     }
 
     tail() {
@@ -54,7 +54,7 @@ class LinkedList {
             return undefined;
         while (node.nextNode)
             node = node.nextNode;
-        return node.key;
+        return node;
     }
 
     at(index) {
@@ -67,7 +67,7 @@ class LinkedList {
         }
         if (node === null)
             return undefined;
-        return node.key;
+        return node;
     }
 
     pop() {
@@ -78,14 +78,23 @@ class LinkedList {
         let nextNode = node.nextNode;
         if (!nextNode) {
             this.headNode = null;
-            return node.key;
+            return node;
         }
         while (nextNode.nextNode) {
             node = nextNode;
             nextNode = node.nextNode;
         }
         node.nextNode = null;
-        return nextNode.key;
+        return nextNode;
+    }
+
+    shift() {
+        const node = this.headNode;
+
+        if (!node)
+            return undefined;
+        this.headNode = node.nextNode;
+        return node;
     }
 
     contains(key) {
