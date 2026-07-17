@@ -71,6 +71,17 @@ class HashMap {
         return false;
     }
 
+    remove(key) {
+        for (let i = 0; i < this.capacity; i++) {
+            if (this.buckets[i].contains(key)) {
+                const id = this.buckets[i].findIndex(key);
+                this.buckets[i].removeAt(id);
+                return true;
+            }
+        }
+        return false;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)

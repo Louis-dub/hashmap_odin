@@ -106,3 +106,30 @@ test("Has method with a key that does not exist", () => {
     expect(hashMap.has("test")).toBe(false);
 });
 
+test("Remove method", () => {
+    expect(hashMap.remove("carrot")).toBe(true);
+    expect(hashMap.toString()).toBe(
+`0 : null
+1 : null
+2 : ( lion : value12 ) -> null
+3 : ( kite : value11 ) -> null
+4 : null
+5 : null
+6 : null
+7 : null
+8 : ( apple : value13 ) -> null
+9 : ( elephant : value5 ) -> ( moon : value14 ) -> null
+10 : null
+11 : ( ice cream : value9 ) -> null
+12 : null
+13 : null
+14 : ( dog : value4 ) -> ( jacket : value10 ) -> null
+15 : ( banana : value2 ) -> null
+16 : ( frog : value6 ) -> null
+17 : ( grape : value7 ) -> ( hat : value8 ) -> null
+`);
+});
+
+test("Remove method with a key that does not exist", () => {
+    expect(hashMap.remove("test")).toBe(false);
+});
