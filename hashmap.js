@@ -64,6 +64,13 @@ class HashMap {
         return null;
     }
 
+    has(key) {
+        for (let i = 0; i < this.capacity; i++)
+            if (this.buckets[i].contains(key))
+                return true;
+        return false;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)

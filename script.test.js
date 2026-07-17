@@ -97,3 +97,12 @@ test("Get method", () => {
 test("Get method with a key that does not exist", () => {
     expect(hashMap.get("test")).toBe(null);
 });
+
+test("Has method", () => {
+    expect(hashMap.has("apple")).toBe(true);
+});
+
+test("Has method with a key that does not exist", () => {
+    expect(hashMap.has("test")).toBe(false);
+});
+
