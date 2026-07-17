@@ -88,3 +88,12 @@ expect(hashMap.toString()).toEqual(
 17 : ( grape : value7 ) -> ( hat : value8 ) -> null
 `);
 });
+
+
+test("Get method", () => {
+    expect(hashMap.get("apple")).toBe("value13");
+});
+
+test("Get method with a key that does not exist", () => {
+    expect(hashMap.get("test")).toBe(null);
+});

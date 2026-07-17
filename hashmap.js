@@ -55,6 +55,15 @@ class HashMap {
             this.grow();
     }
 
+    get(key) {
+        for (let i = 0; i < this.capacity; i++) {
+            let node = this.buckets[i].contains(key);
+            if (node)
+                return node.value;
+        }
+        return null;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)
