@@ -82,6 +82,11 @@ class HashMap {
         return false;
     }
 
+    clear() {
+        for (let i = 0; i < this.capacity; i++)
+            this.buckets[i].headNode = null;
+    }
+
     toString() {
         let string = "";
         for (let i = 0; i < this.buckets.length; i++)
